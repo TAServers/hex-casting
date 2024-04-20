@@ -16,31 +16,10 @@ plugins {
     // https://github.com/FabricMC/fabric-loom/issues/612#issuecomment-1198444120
     // Also it looks like property lookups don't work this early
     id 'fabric-loom' version '1.0-SNAPSHOT' apply false
-
-    id("at.petra-k.PKPlugin") version "0.1.0-pre-87"
-    id("at.petra-k.PKSubprojPlugin") version "0.1.0-pre-87" apply false
 }
 
 repositories {
     mavenCentral()
-}
-
-pkpcpbp {
-    modInfo {
-        modID(project.modID)
-        mcVersion(project.minecraftVersion)
-        modVersion(project.modVersion)
-    }
-    curseforgeInfo {
-        id 569849
-        stability "beta"
-        token(System.getenv("CURSEFORGE_TOKEN"))
-    }
-    modrinthInfo {
-        id "nTW3yKrm"
-        stability "beta"
-        token(System.getenv("MODRINTH_TOKEN"))
-    }
 }
 
 subprojects {
