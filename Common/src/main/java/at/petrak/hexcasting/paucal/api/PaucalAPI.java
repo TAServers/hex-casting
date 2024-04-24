@@ -19,8 +19,6 @@ public interface PaucalAPI {
     String MOD_ID = "paucal";
     String CONTRIBUTOR_URL =
         "https://raw.githubusercontent.com/gamma-delta/contributors/main/paucal/contributors-v01.json5";
-    String HEADPAT_AUDIO_URL_STUB =
-        "https://raw.githubusercontent.com/gamma-delta/contributors/main/paucal/headpat-sounds/";
 
     Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 

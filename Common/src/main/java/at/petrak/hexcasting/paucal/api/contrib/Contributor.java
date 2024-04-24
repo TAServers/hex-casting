@@ -18,8 +18,6 @@ public class Contributor {
     private final boolean isDev;
 
     private final float pitchCenter, pitchVariance;
-    private final List<HeadpatSpec> headpats;
-
     private final JsonObject otherVals;
 
     @ApiStatus.Internal
@@ -31,9 +29,6 @@ public class Contributor {
         this.isDev = this.getBool("paucal:is_dev", false);
         this.pitchCenter = this.getFloat("paucal:pat_pitch", 1f);
         this.pitchVariance = this.getFloat("paucal:pat_variance", 0.5f);
-
-        var patsRaw = this.otherVals.get("paucal:pat_sound");
-        this.headpats = HeadpatSpec.loadFromJson(patsRaw);
     }
 
     public int getLevel() {
@@ -48,38 +43,6 @@ public class Contributor {
         return uuid;
     }
 
-    @ApiStatus.Internal
-    public Collection<String> neededGithubSounds() {
-        var out = new ArrayList<String>();
-        for (var hp : this.headpats) {
-            if (hp.type == HeadpatSpec.Type.GITHUB) {
-                out.add(hp.location);
-            }
-        }
-        return out;
-    }
-
-    /**
-     * Logic happens clientside to the <em>patter</em>, the pattee gets a packet like everyone else
-     *
-     * @param patter
-     */
-    public boolean doHeadpatSound(Vec3 patteePos, @Nullable Player patter, Level level) {
-        if (this.headpats.isEmpty()) {
-            return false;
-        }
-
-        if (level instanceof ServerLevel slevel) {
-            var idx = level.random.nextInt(this.headpats.size());
-            var patspec = this.headpats.get(idx);
-            var pitch = this.pitchCenter + (float) (Math.random() - 0.5) * this.pitchVariance;
-
-            IXplatAbstractions.INSTANCE.sendPacketNearS2C(patteePos, 64.0, slevel,
-                patspec.makePacket(patteePos, pitch, patter));
-        } // Otherwise, they will play the sound once they get the packet
-
-        return true;
-    }
 
     // =====
 

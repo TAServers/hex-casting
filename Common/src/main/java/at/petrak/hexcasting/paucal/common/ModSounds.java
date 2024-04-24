@@ -1,6 +1,5 @@
 package at.petrak.hexcasting.paucal.common;
 
-import at.petrak.hexcasting.paucal.common.sounds.HeadpatSoundInstance;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
@@ -12,9 +11,6 @@ import static at.petrak.hexcasting.paucal.api.PaucalAPI.modLoc;
 
 public class ModSounds {
     private static final List<SoundEvent> SOUNDS = new ArrayList<>();
-
-    // This sound is replaced with the cool custom one
-    public static SoundEvent DUMMY = sound(HeadpatSoundInstance.DUMMY_LOCATION);
 
     private static SoundEvent sound(String name) {
         var sound = SoundEvent.createVariableRangeEvent(modLoc(name));
