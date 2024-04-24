@@ -26,7 +26,7 @@ body:
   - type: textarea
     id: issue-description
     attributes:
-      label: Describe the issue here.
+      label: Issue Description
       description: If applicable, linking to the related source files with a permalink is recommended.
       placeholder: Enter issue description...
       value: N/A
