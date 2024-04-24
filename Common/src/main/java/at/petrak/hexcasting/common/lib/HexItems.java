@@ -8,7 +8,6 @@ import at.petrak.hexcasting.common.items.ItemStaff;
 import at.petrak.hexcasting.common.items.magic.*;
 import at.petrak.hexcasting.common.items.pigment.ItemAmethystAndCopperPigment;
 import at.petrak.hexcasting.common.items.pigment.ItemDyePigment;
-import at.petrak.hexcasting.common.items.pigment.ItemPridePigment;
 import at.petrak.hexcasting.common.items.pigment.ItemUUIDPigment;
 import at.petrak.hexcasting.common.items.storage.*;
 import at.petrak.hexcasting.xplat.IXplatAbstractions;
@@ -116,14 +115,6 @@ public class HexItems {
         var out = new EnumMap<DyeColor, ItemDyePigment>(DyeColor.class);
         for (var dye : DyeColor.values()) {
             out.put(dye, make("dye_colorizer_" + dye.getName(), new ItemDyePigment(dye, unstackable())));
-        }
-        return out;
-    });
-    public static final EnumMap<ItemPridePigment.Type, ItemPridePigment> PRIDE_PIGMENTS = Util.make(() -> {
-        var out = new EnumMap<ItemPridePigment.Type, ItemPridePigment>(ItemPridePigment.Type.class);
-        for (var politicsInMyVidya : ItemPridePigment.Type.values()) {
-            out.put(politicsInMyVidya, make("pride_colorizer_" + politicsInMyVidya.getName(),
-                new ItemPridePigment(politicsInMyVidya, unstackable())));
         }
         return out;
     });

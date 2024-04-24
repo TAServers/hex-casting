@@ -3,7 +3,7 @@ package at.petrak.hexcasting.datagen.tag;
 import at.petrak.hexcasting.api.mod.HexTags;
 import at.petrak.hexcasting.common.lib.HexBlocks;
 import at.petrak.hexcasting.xplat.IXplatTags;
-import at.petrak.paucal.api.datagen.PaucalBlockTagProvider;
+import at.petrak.hexcasting.paucal.api.datagen.PaucalBlockTagProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;

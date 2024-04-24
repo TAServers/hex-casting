@@ -5,7 +5,6 @@ import at.petrak.hexcasting.api.misc.MediaConstants;
 import at.petrak.hexcasting.api.mod.HexTags;
 import at.petrak.hexcasting.common.blocks.decoration.BlockAkashicLog;
 import at.petrak.hexcasting.common.items.ItemStaff;
-import at.petrak.hexcasting.common.items.pigment.ItemPridePigment;
 import at.petrak.hexcasting.common.lib.HexBlocks;
 import at.petrak.hexcasting.common.lib.HexItems;
 import at.petrak.hexcasting.common.recipe.SealThingsRecipe;
@@ -16,7 +15,6 @@ import at.petrak.hexcasting.datagen.HexAdvancements;
 import at.petrak.hexcasting.datagen.IXplatConditionsBuilder;
 import at.petrak.hexcasting.datagen.IXplatIngredients;
 import at.petrak.hexcasting.datagen.recipe.builders.BrainsweepRecipeBuilder;
-import at.petrak.hexcasting.datagen.recipe.builders.CompatIngredientValue;
 import at.petrak.hexcasting.datagen.recipe.builders.CreateCrushingRecipeBuilder;
 import at.petrak.hexcasting.datagen.recipe.builders.FarmersDelightCuttingRecipeBuilder;
 import at.petrak.paucal.api.datagen.PaucalRecipeProvider;
@@ -182,26 +180,6 @@ public class HexplatRecipes extends PaucalRecipeProvider {
                 .unlockedBy("has_item", hasItem(HexItems.AMETHYST_DUST)).save(recipes);
         }
 
-        gayRecipe(recipes, ItemPridePigment.Type.AGENDER, Ingredient.of(Items.GLASS));
-        gayRecipe(recipes, ItemPridePigment.Type.AROACE, Ingredient.of(Items.WHEAT_SEEDS));
-        gayRecipe(recipes, ItemPridePigment.Type.AROMANTIC, Ingredient.of(Items.ARROW));
-        gayRecipe(recipes, ItemPridePigment.Type.ASEXUAL, Ingredient.of(Items.BREAD));
-        gayRecipe(recipes, ItemPridePigment.Type.BISEXUAL, Ingredient.of(Items.WHEAT));
-        gayRecipe(recipes, ItemPridePigment.Type.DEMIBOY, Ingredient.of(Items.RAW_IRON));
-        gayRecipe(recipes, ItemPridePigment.Type.DEMIGIRL, Ingredient.of(Items.RAW_COPPER));
-        gayRecipe(recipes, ItemPridePigment.Type.GAY, Ingredient.of(Items.STONE_BRICK_WALL));
-        gayRecipe(recipes, ItemPridePigment.Type.GENDERFLUID, Ingredient.of(Items.WATER_BUCKET));
-        gayRecipe(recipes, ItemPridePigment.Type.GENDERQUEER, Ingredient.of(Items.GLASS_BOTTLE));
-        gayRecipe(recipes, ItemPridePigment.Type.INTERSEX, Ingredient.of(Items.AZALEA));
-        gayRecipe(recipes, ItemPridePigment.Type.LESBIAN, Ingredient.of(Items.HONEYCOMB));
-        gayRecipe(recipes, ItemPridePigment.Type.NONBINARY, Ingredient.of(Items.MOSS_BLOCK));
-        gayRecipe(recipes, ItemPridePigment.Type.PANSEXUAL, ingredients.whenModIngredient(
-            Ingredient.of(Items.CARROT),
-            "farmersdelight",
-            CompatIngredientValue.of("farmersdelight:skillet")
-        ));
-        gayRecipe(recipes, ItemPridePigment.Type.PLURAL, Ingredient.of(Items.REPEATER));
-        gayRecipe(recipes, ItemPridePigment.Type.TRANSGENDER, Ingredient.of(Items.EGG));
 
         ring(RecipeCategory.MISC, HexItems.UUID_PIGMENT, 1, HexItems.AMETHYST_DUST, Items.AMETHYST_SHARD)
             .unlockedBy("has_item", hasItem(HexItems.AMETHYST_DUST)).save(recipes);
@@ -545,18 +523,6 @@ public class HexplatRecipes extends PaucalRecipeProvider {
             .pattern(" WS")
             .pattern("S  ")
             .unlockedBy("has_item", hasItem(HexItems.CHARGED_AMETHYST))
-            .save(recipes);
-    }
-
-    private void gayRecipe(Consumer<FinishedRecipe> recipes, ItemPridePigment.Type type, Ingredient material) {
-        var colorizer = HexItems.PRIDE_PIGMENTS.get(type);
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, colorizer)
-            .define('D', HexItems.AMETHYST_DUST)
-            .define('C', material)
-            .pattern(" D ")
-            .pattern("DCD")
-            .pattern(" D ")
-            .unlockedBy("has_item", hasItem(HexItems.AMETHYST_DUST))
             .save(recipes);
     }
 
