@@ -1,0 +1,34 @@
+name: Legacy Code Maintenance
+description: File a issue report for any sort of maintenance on the original Hex Casting codebase
+title: "[Legacy Code]: "
+labels: ["legacy"]
+assignees:
+  - yogwoggf
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can use this form to quickly file a maintenance issue relating to the original Hex Casting codebase. These can range from adding/removing a dependency to removing features.
+  - type: dropdown
+    id: specific-issue-type
+    attributes:
+      label: Issue Type
+      description: What part of the codebase does this belong to?
+      options:
+        - Maven dependencies
+        - Gradle scripts
+        - Common codebase
+        - Fabric codebase
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the issue here.
+      description: If applicable, linking to the related source files with a permalink is recommended.
+      placeholder: Enter issue description...
+      value: N/A
+    validations:
+      required: true
