@@ -9,7 +9,7 @@ import at.petrak.hexcasting.api.mod.HexTags;
 import at.petrak.hexcasting.common.items.ItemLoreFragment;
 import at.petrak.hexcasting.common.lib.HexBlocks;
 import at.petrak.hexcasting.common.lib.HexItems;
-import at.petrak.paucal.api.datagen.PaucalAdvancementSubProvider;
+import at.petrak.hexcasting.paucal.api.datagen.PaucalAdvancementSubProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.DisplayInfo;
 import net.minecraft.advancements.FrameType;

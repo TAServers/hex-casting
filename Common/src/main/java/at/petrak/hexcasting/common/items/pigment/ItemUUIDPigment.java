@@ -3,7 +3,7 @@ package at.petrak.hexcasting.common.items.pigment;
 import at.petrak.hexcasting.api.addldata.ADPigment;
 import at.petrak.hexcasting.api.item.PigmentItem;
 import at.petrak.hexcasting.api.pigment.ColorProvider;
-import at.petrak.paucal.api.PaucalAPI;
+import at.petrak.hexcasting.paucal.api.PaucalAPI;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 import net.minecraft.world.item.Item;
